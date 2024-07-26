@@ -94,19 +94,20 @@ export default function UserCommitHistory() {
                 const totalChanges = calculateTotalChanges(commit.files);
 
                 return (
-                    <div className={styles.commitItem} key={index}>
+                    <div className={`${styles.commitItem} ${styles.code}`} key={index}>
                         <span className={`${styles.techStackIcon} material-symbols-outlined`}>
                             {getIconForCommitType(getCommitType(commit.commit.message))}
                         </span>
+
                         <div className={styles.commitDetails}>
                             <h3 className={styles.codeEmph}>{commit.repositoryName}</h3>
-                            <p className={styles.code}>Committed: {timeSince(commit.commit.author.date)}</p>
-                            <p>
-                                {totalChanges.fileCount} files changed,
-                                {totalChanges.additions} additions,
-                                {totalChanges.deletions} deletions
-                            </p>
-                            <p className={styles.code}>{commit.commit.message}</p>
+                            <div className={styles.commitChanges}>
+                                <p className={`dark-grey`}>{totalChanges.fileCount} files changed</p>
+                                <p className={`green`}>{totalChanges.additions} insertions(+)</p>
+                                <p className={`red`}>{totalChanges.deletions} deletions(-)</p>
+                            </div>
+                            <p className={styles.commitMessage}>{commit.commit.message}</p>
+                            <p className={styles.commitDate}>Committed {timeSince(commit.commit.author.date)}</p>
                         </div>
                     </div>
                 );

@@ -70,31 +70,26 @@
     margin: .25rem 0;
 }
 
-.description {
-    display: inherit;
-    justify-content: inherit;
-    align-items: inherit;
-    font-size: 0.85rem;
-    max-width: var(--max-width);
-    width: 100%;
-    z-index: 2;
-    font-family: var(--font-mono);
+.commitDetails>hr {
+    margin: 2px 1rem;
 }
 
-.description a {
+.commitChanges {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 0.5rem;
+    flex-direction: row;
 }
 
-.description p {
-    position: relative;
-    margin: 0;
-    padding: 1rem;
-    background-color: rgba(var(--callout-rgb), 0.5);
-    border: 1px solid rgba(var(--callout-border-rgb), 0.3);
-    border-radius: var(--border-radius);
+.commitChanges>p {
+    margin-right: 12px;
+}
+
+.commitMessage {
+    color: rgb(var(--orange-rgb));
+}
+
+.commitDate {
+    font-style: italic;
+
 }
 
 .code {

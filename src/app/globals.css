@@ -7,6 +7,11 @@
     --background-start-rgb: 214, 219, 220;
     --background-end-rgb: 255, 255, 255;
 
+    --dark-grey-rgb: 206, 209, 212;
+    --green-rgb: 9, 250, 0;
+    --red-rgb: 246, 29, 39;
+    --orange-rgb: 214, 159, 31;
+
     --primary-glow: conic-gradient(
             from 180deg at 50% 50%,
             #16abff33 0deg,
@@ -100,6 +105,22 @@ body {
 a {
     color: inherit;
     text-decoration: none;
+}
+
+.dark-grey {
+    color: rgb(var(--dark-grey-rgb))
+}
+
+.green {
+    color: rgb(var(--green-rgb));
+}
+
+.red {
+    color: rgb(var(--red-rgb));
+}
+
+.orange {
+    color: rgb(var(--orange-rgb));
 }
 
 @media (prefers-color-scheme: dark) {
