@@ -59,7 +59,7 @@
     max-width: 500px;
 }
 
-.commitItem>.techStackIcon {
+.commitItem > .techStackIcon {
     display: flex;
     margin: .5rem .5rem 0 0;
 }

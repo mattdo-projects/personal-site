@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import "material-symbols"
-import {siGithub} from "simple-icons";
+import { siGithub } from "simple-icons";
 
 import styles from "./page.module.css";
 import UserCommitHistory from "@/app/userCommitHistory";
@@ -36,7 +36,7 @@ export default function Home() {
                 <Link href={`https://github.com/mattdo-dev`}>Github</Link>
             </button>
 
-            < UserCommitHistory />
+            < UserCommitHistory/>
         </main>
     );
 }

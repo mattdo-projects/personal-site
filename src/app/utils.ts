@@ -1,19 +1,4 @@
-﻿// Filter commits within a certain time period
-export interface Commit {
-    commit: {
-        message: string;
-        author: {
-            name: string;
-            date: string;
-        };
-    };
-    repositoryName: string;
-}
-
-export interface Repository {
-    name: string;
-    commits_url: string;
-}
+﻿import { Commit, File } from "@/app/interface";
 
 export const filterCommitsByDate = (commits: Commit[], days: number) => {
     const currentDate = new Date();
@@ -63,4 +48,14 @@ export const getIconForCommitType = (type: string): string => {
         default:
             return 'commit';
     }
+};
+
+export const calculateTotalChanges = (files?: File[]) => {
+    if (!files) return {additions: 0, deletions: 0, fileCount: 0};
+
+    return files.reduce((acc, file) => ({
+        additions: acc.additions + file.additions,
+        deletions: acc.deletions + file.deletions,
+        fileCount: acc.fileCount + 1,
+    }), {additions: 0, deletions: 0, fileCount: 0});
 };
