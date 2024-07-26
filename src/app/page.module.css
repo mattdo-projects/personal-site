@@ -48,6 +48,32 @@
     text-decoration: none;
 }
 
+.commitPreview {
+    display: flex;
+    margin-top: 12px;
+}
+
+.commitPreviewContent {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.cursorBlinking {
+    display: flex;
+    color: rgb(var(--white-rgb));
+    animation: 1s blink step-end infinite;
+}
+
+@keyframes blink {
+    from, to {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
 .commitHistory {
     margin-top: 12px;
 }

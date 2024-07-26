@@ -83,8 +83,34 @@ export default function UserCommitHistory() {
         });
     }, []);
 
-    if (loading) return <div>Loading...</div>;
-    if (error) return <div>Error: {error}</div>;
+    // TODO: improve look of loading...
+    if (loading) return (
+        <div className={styles.commitHistory}>
+            <div className={styles.commitPreview}>
+                <span className={`${styles.techStackIcon} material-symbols-outlined`}>
+                    terminal
+                </span>
+                <div className={styles.commitPreviewContent}>
+                    <div className={`${styles.code}`}>load commit history</div>
+                    <div className={styles.cursorBlinking}>|</div>
+                </div>
+            </div>
+        </div>
+    );
+    if (error) return (
+        <div className={styles.commitHistory}>
+            <div className={styles.commitPreview}>
+                <span className={`${styles.techStackIcon} material-symbols-outlined red`}>
+                    error
+                </span>
+                <div className={styles.commitPreviewContent}>
+                    <div className={`${styles.code} red`}>Error: Failed to display public commit history. Call the
+                        dev!
+                    </div>
+                </div>
+            </div>
+        </div>
+    );
 
     const filteredCommits = filterCommitsByDate(commits, TIME_PERIOD_DAYS);
 
