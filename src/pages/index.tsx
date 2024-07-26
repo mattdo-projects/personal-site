@@ -3,13 +3,13 @@ import Link from "next/link";
 import "material-symbols"
 import { siGithub } from "simple-icons";
 
-import styles from "./page.module.css";
-import UserCommitHistory from "@/app/userCommitHistory";
+import styles from "./index.module.css";
+import UserCommitHistory from "@/components/userCommitHistory/userCommitHistory";
 
 const techStackCodeList = ["C", "C++", "C#", "Python", "Java", "TypeScript", "SQL"];
 const techStackToolsList = ["Postgres", "Redis", "git", "Linux", "Docker", "Node.js", "React"];
 
-export default function Home() {
+export default function Index() {
     return (
         <main className={styles.main}>
             <section className={styles.header}>

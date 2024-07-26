@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { urbanist } from "@/app/fonts";
+import { urbanist } from "@/fonts";
 import "material-symbols/outlined.css";
 import "./globals.css";
 

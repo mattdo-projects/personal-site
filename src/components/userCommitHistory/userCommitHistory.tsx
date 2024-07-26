@@ -1,15 +1,15 @@
 ﻿"use client";
 
 import React, { useEffect, useState } from "react";
-import styles from '@/app/page.module.css';
-import { RawCommit, Commit, Repository } from "@/app/interface";
+import styles from './userCommitHistory.module.css';
+import { RawCommit, Commit, Repository } from "@/interface";
 import {
     calculateTotalChanges,
     filterCommitsByDate,
     getCommitType,
     getIconForCommitType,
     timeSince
-} from "@/app/utils";
+} from "@/utils/utils";
 
 const GITHUB_USN = process.env.NEXT_PUBLIC_GITHUB_USERNAME as string;
 const GITHUB_TOK = process.env.NEXT_PUBLIC_GITHUB_TOKEN as string;

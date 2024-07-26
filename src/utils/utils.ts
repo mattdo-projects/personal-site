@@ -1,4 +1,4 @@
-﻿import { Commit, File } from "@/app/interface";
+﻿import { Commit, File } from "@/interface";
 
 export const filterCommitsByDate = (commits: Commit[], days: number) => {
     const currentDate = new Date();
