@@ -2,15 +2,22 @@
 
 export const filterCommitsByDate = (commits: Commit[], days: number): Commit[] => {
     const currentDate = new Date();
-    return commits.filter((commit) => {
+    const filteredCommits = commits.filter((commit) => {
         const commitDate = new Date(commit.commit.author.date);
         const diffTime = Math.abs(currentDate.getTime() - commitDate.getTime());
         const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
         return diffDays <= days;
     });
+
+    filteredCommits.sort((a: Commit, b: Commit) => {
+        const dateA = new Date(a.commit.author.date).getTime();
+        const dateB = new Date(b.commit.author.date).getTime();
+        return dateB - dateA;
+    })
+
+    return filteredCommits;
 };
 
-// Filter commits within the defined time period
 export const timeSince = (date: string): string => {
     const seconds = Math.floor((new Date().getTime() - new Date(date).getTime()) / 1000);
     let interval = Math.floor(seconds / 31536000);
@@ -50,11 +57,11 @@ export const getIconForCommitType = (type: string): string => {
 };
 
 export const calculateTotalChanges = (files?: File[]): { additions: number, deletions: number, fileCount: number } => {
-    if (!files) return { additions: 0, deletions: 0, fileCount: 0 };
+    if (!files) return {additions: 0, deletions: 0, fileCount: 0};
 
     return files.reduce((acc, file) => ({
         additions: acc.additions + file.additions,
         deletions: acc.deletions + file.deletions,
         fileCount: acc.fileCount + 1,
-    }), { additions: 0, deletions: 0, fileCount: 0 });
+    }), {additions: 0, deletions: 0, fileCount: 0});
 };

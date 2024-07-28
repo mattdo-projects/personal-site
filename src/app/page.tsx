@@ -3,8 +3,9 @@ import "material-symbols"
 
 import UserCommitHistory from "@/components/user-commit-history/user-commit-history";
 import styles from "./page.module.css";
-import { Commit } from "@/app/interface";
-import { fetchCommits } from "@/app/api/github-data-api/fetch-commits";
+import { fetchCommits } from "@/pages/api/github/fetch-commits";
+import { SiGithub } from "@icons-pack/react-simple-icons";
+import React from "react";
 
 
 const techStackCodeList = ["C", "C++", "C#", "Python", "Java", "TypeScript", "SQL"];
@@ -35,6 +36,10 @@ export default async function Page() {
                 </section>
             </section>
 
+            <Link className={styles.commitHeader} href={`${process.env.NEXT_PUBLIC_GITHUB_URL}`}>
+                <SiGithub size={20}/>
+                <h3>Github</h3>
+            </Link>
             <UserCommitHistory commits={commits} error={error}/>
         </main>
     );

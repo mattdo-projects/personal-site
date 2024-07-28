@@ -14,7 +14,9 @@ export default function RootLayout({children,}: Readonly<{ children: React.React
     return (
         <html lang="en" className={urbanist.className}>
         <body>
+        <main>
             {children}
+        </main>
         </body>
         </html>
     );

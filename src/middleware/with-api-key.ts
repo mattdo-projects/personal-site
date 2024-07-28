@@ -1,6 +1,6 @@
 ﻿import type { NextApiHandler, NextApiRequest, NextApiResponse } from "next";
 
-const WithApiKey = (handler: NextApiHandler) => {
+export const WithApiKey = (handler: NextApiHandler) => {
     return async (req: NextApiRequest, res: NextApiResponse) => {
         const apiKey = req.headers['x-api-key'] as string | undefined;
         const expectedApiKey = process.env.API_SECRET_KEY as string;
@@ -12,5 +12,3 @@ const WithApiKey = (handler: NextApiHandler) => {
         return handler(req, res);
     };
 };
-
-export default WithApiKey;
