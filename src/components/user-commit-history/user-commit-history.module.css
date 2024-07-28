@@ -25,7 +25,21 @@
 }
 
 .commitHistory {
-    margin-top: 12px;
+    margin: 12px 0;
+    border-radius: 6px;
+    border: 1px solid rgb(var(--background-start-rgb));
+}
+
+.commitHeader {
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 6px 0;
+}
+
+.commitHeader > h3 {
+    margin-left: 12px;
+    font-weight: 700;
 }
 
 .commitItem {
@@ -46,7 +60,7 @@
     margin: .25rem 0;
 }
 
-.commitDetails>hr {
+.commitDetails > hr {
     margin: 2px 1rem;
 }
 
@@ -55,7 +69,7 @@
     flex-direction: row;
 }
 
-.commitChanges>p {
+.commitChanges > p {
     margin-right: 12px;
 }
 

@@ -1,7 +1,9 @@
+import React from "react";
 import type { Metadata } from "next";
-import { urbanist } from "@/fonts";
+
 import "material-symbols/outlined.css";
 import "./globals.css";
+import { urbanist } from "@/app/fonts";
 
 export const metadata: Metadata = {
     title: "World of Do",
@@ -10,8 +12,10 @@ export const metadata: Metadata = {
 
 export default function RootLayout({children,}: Readonly<{ children: React.ReactNode; }>) {
     return (
-        <html lang="en">
-        <body className={urbanist.className}>{children}</body>
+        <html lang="en" className={urbanist.className}>
+        <body>
+            {children}
+        </body>
         </html>
     );
 }

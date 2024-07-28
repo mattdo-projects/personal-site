@@ -1,4 +1,4 @@
-﻿import { Urbanist, Ubuntu_Mono } from "next/font/google";
+﻿import { Ubuntu_Mono, Urbanist } from "next/font/google";
 
 export const urbanist = Urbanist({
     subsets: ['latin'],

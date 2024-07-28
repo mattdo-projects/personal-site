@@ -1,20 +1,23 @@
-import Image from "next/image";
 import Link from "next/link";
 import "material-symbols"
-import { siGithub } from "simple-icons";
 
-import styles from "./index.module.css";
-import UserCommitHistory from "@/components/userCommitHistory/userCommitHistory";
+import UserCommitHistory from "@/components/user-commit-history/user-commit-history";
+import styles from "./page.module.css";
+import { Commit } from "@/app/interface";
+import { fetchCommits } from "@/app/api/github-data-api/fetch-commits";
+
 
 const techStackCodeList = ["C", "C++", "C#", "Python", "Java", "TypeScript", "SQL"];
 const techStackToolsList = ["Postgres", "Redis", "git", "Linux", "Docker", "Node.js", "React"];
 
-export default function Index() {
+export default async function Page() {
+    const {commits, error} = await fetchCommits();
+
     return (
         <main className={styles.main}>
             <section className={styles.header}>
                 <h1 className={styles.title}>
-                    <Link href={"/"}>mattdo.dev</Link>
+                    <Link href={"/"}>{process.env.NEXT_PUBLIC_SITE_URL}</Link>
                 </h1>
 
                 <section className={styles.techStack}>
@@ -32,11 +35,7 @@ export default function Index() {
                 </section>
             </section>
 
-            <button className={styles.buttonStyled}>
-                <Link href={`https://github.com/mattdo-dev`}>Github</Link>
-            </button>
-
-            < UserCommitHistory/>
+            <UserCommitHistory commits={commits} error={error}/>
         </main>
     );
 }
