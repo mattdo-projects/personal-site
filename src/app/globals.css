@@ -12,6 +12,7 @@
     --green-rgb: 9, 250, 0;
     --red-rgb: 246, 29, 39;
     --orange-rgb: 214, 159, 31;
+    --blue-link-rgb: 9, 102, 251;
 
     --primary-glow: conic-gradient(
             from 180deg at 50% 50%,
@@ -104,8 +105,17 @@ body {
 }
 
 a {
-    color: inherit;
+    color: rgb(var(--blue-link-rgb));
     text-decoration: none;
+}
+
+hr {
+    margin: 6px 0 12px 0;
+    width: 100%;
+}
+
+a:hover {
+    text-decoration: underline;
 }
 
 .dark-grey {
