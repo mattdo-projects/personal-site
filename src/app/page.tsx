@@ -4,7 +4,6 @@ import "material-symbols"
 import UserCommitHistory from "@/components/user-commit-history/user-commit-history";
 import styles from "./page.module.css";
 import { fetchCommits } from "@/components/user-commit-history/fetch-commits";
-import { SiGithub } from "@icons-pack/react-simple-icons";
 import React from "react";
 
 const intro =
@@ -39,14 +38,14 @@ export default async function Page() {
                     </div>
                 </section>
 
-                <section className={styles.techStack}>
-                    <span className={`${styles.techStackIcon} material-symbols-outlined`}>alternate_email</span>
-                    <div className={styles.techStackCard}>
-                        <Link href={`mailto:domattgmt7@gmail.com`}>
-                            domattgmt7@gmail.com
-                        </Link>
-                    </div>
-                </section>
+                {/*<section className={styles.techStack}>*/}
+                {/*    <span className={`${styles.techStackIcon} material-symbols-outlined`}>alternate_email</span>*/}
+                {/*    <div className={styles.techStackCard}>*/}
+                {/*        <Link href={`mailto:domattgmt7@gmail.com`}>*/}
+                {/*            domattgmt7@gmail.com*/}
+                {/*        </Link>*/}
+                {/*    </div>*/}
+                {/*</section>*/}
 
                 <section className={styles.techStack}>
                     <span className={`${styles.techStackIcon} material-symbols-outlined`}>code</span>
