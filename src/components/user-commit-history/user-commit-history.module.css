@@ -69,7 +69,9 @@
     flex-direction: row;
 }
 
-.commitChanges > p {
+.commitChangesItem {
+    display: inline-flex;
+    flex-direction: row;
     margin-right: 12px;
 }
 
@@ -82,12 +84,12 @@
 
 }
 
-.code {
-    font-weight: 300;
-    font-family: var(--font-mono);
+.expandedLabel {
+    display: inline;
 }
 
-.codeEmph {
-    font-weight: 700;
-    font-family: var(--font-mono);
+@media (max-width: 700px) {
+    .expandedLabel {
+        display: none;
+    }
 }

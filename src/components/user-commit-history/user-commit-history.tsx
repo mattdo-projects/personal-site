@@ -48,9 +48,17 @@ const UserCommitHistory: React.FC<UserCommitHistoryProps> = ({commits, error}) =
                         <div className={styles.commitDetails}>
                             <h3 className={styles.codeEmph}>{commit.repositoryName}</h3>
                             <div className={styles.commitChanges}>
-                                <p className={`dark-grey`}>{totalChanges.fileCount} files changed</p>
-                                <p className={`green`}>{totalChanges.additions} insertions(+)</p>
-                                <p className={`red`}>{totalChanges.deletions} deletions(-)</p>
+                                <div className={`${styles.commitChangesItem} dark-grey`}>{totalChanges.fileCount} files
+                                    <p className={styles.expandedLabel}>changed</p>
+                                </div>
+                                <div className={`${styles.commitChangesItem} green`}>{totalChanges.additions}
+                                    <p className={styles.expandedLabel}> insertions</p>
+                                    (+)
+                                </div>
+                                <div className={`${styles.commitChangesItem} red`}>{totalChanges.deletions}
+                                    <p className={styles.expandedLabel}> deletions</p>
+                                    (-)
+                                </div>
                             </div>
                             <p className={styles.commitMessage}>{commit.commit.message}</p>
                             <p className={styles.commitDate}>Committed {timeSince(commit.commit.author.date)}</p>
