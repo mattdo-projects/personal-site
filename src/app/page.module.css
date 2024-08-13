@@ -4,6 +4,7 @@
     margin: 0 auto;
     padding: 6rem;
     max-width: 900px;
+    font-family: var(--font-mono);
 }
 
 .header {

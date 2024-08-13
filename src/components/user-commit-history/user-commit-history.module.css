@@ -46,7 +46,6 @@
     display: flex;
     flex-direction: row;
     margin-bottom: 1rem;
-    max-width: 500px;
 }
 
 .commitItem > .techStackIcon {
@@ -80,8 +79,8 @@
 }
 
 .commitDate {
+    color: rgb(var(--dark-grey-rgb));
     font-style: italic;
-
 }
 
 .expandedLabel {

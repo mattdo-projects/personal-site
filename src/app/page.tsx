@@ -30,24 +30,6 @@ export default async function Page() {
                 </section>
 
                 <section className={styles.techStack}>
-                    <span className={`${styles.techStackIcon} material-symbols-outlined`}>link</span>
-                    <div className={styles.techStackCard}>
-                        <Link href={`${process.env.NEXT_PUBLIC_GITHUB_URL}`}>
-                            github.com/{process.env.ALIAS}
-                        </Link>
-                    </div>
-                </section>
-
-                {/*<section className={styles.techStack}>*/}
-                {/*    <span className={`${styles.techStackIcon} material-symbols-outlined`}>alternate_email</span>*/}
-                {/*    <div className={styles.techStackCard}>*/}
-                {/*        <Link href={`mailto:domattgmt7@gmail.com`}>*/}
-                {/*            domattgmt7@gmail.com*/}
-                {/*        </Link>*/}
-                {/*    </div>*/}
-                {/*</section>*/}
-
-                <section className={styles.techStack}>
                     <span className={`${styles.techStackIcon} material-symbols-outlined`}>code</span>
                     <div className={styles.techStackCard}>
                         {techStackCodeList.map((tech) => (
@@ -64,6 +46,33 @@ export default async function Page() {
                         ))}
                     </div>
                 </section>
+
+                <section className={styles.techStack}>
+                    <span className={`${styles.techStackIcon} material-symbols-outlined`}>link</span>
+                    <div className={styles.techStackCard}>
+                        <Link href={`https://${process.env.NEXT_PUBLIC_GITHUB_URL}`}>
+                            {process.env.NEXT_PUBLIC_GITHUB_URL}
+                        </Link>
+                    </div>
+                </section>
+
+                <section className={styles.techStack}>
+                    <span className={`${styles.techStackIcon} material-symbols-outlined`}>link</span>
+                    <div className={styles.techStackCard}>
+                        <Link href={`https://${process.env.NEXT_PUBLIC_LINKEDIN_URL}`}>
+                            {process.env.NEXT_PUBLIC_LINKEDIN_URL}
+                        </Link>
+                    </div>
+                </section>
+
+                <section className={styles.techStack}>
+                    <span className={`${styles.techStackIcon} material-symbols-outlined`}>alternate_email</span>
+                    <div className={styles.techStackCard}>
+                        <Link href={`${process.env.NEXT_PUBLIC_EMAIL}`}>
+                            {process.env.NEXT_PUBLIC_EMAIL}
+                        </Link>
+                    </div>
+                </section>
             </section>
 
             <hr/>
@@ -71,7 +80,7 @@ export default async function Page() {
             <section className={styles.techStack}>
                 <span className={`${styles.techStackIcon} material-symbols-outlined`}>new_releases</span>
                 <h3 className={styles.techStackCard}>
-                    Recent Commits:
+                    I love programming! Check out my coding adventures:
                 </h3>
             </section>
 

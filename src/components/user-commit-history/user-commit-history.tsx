@@ -9,7 +9,7 @@ import {
     timeSince
 } from "@/utils/utils";
 
-const TIME_PERIOD_DAYS = 60;
+const TIME_PERIOD_DAYS = 30;
 
 interface UserCommitHistoryProps {
     commits: Commit[];
@@ -48,15 +48,17 @@ const UserCommitHistory: React.FC<UserCommitHistoryProps> = ({commits, error}) =
                         <div className={styles.commitDetails}>
                             <h3 className={styles.codeEmph}>{commit.repositoryName}</h3>
                             <div className={styles.commitChanges}>
-                                <div className={`${styles.commitChangesItem} dark-grey`}>{totalChanges.fileCount} files
+                                <div
+                                    className={`${styles.commitChangesItem} dark-grey`}>{totalChanges.fileCount} files&nbsp;
                                     <p className={styles.expandedLabel}>changed</p>
                                 </div>
-                                <div className={`${styles.commitChangesItem} green`}>{totalChanges.additions}
-                                    <p className={styles.expandedLabel}> insertions</p>
+                                <div className={`${styles.commitChangesItem} green`}>{totalChanges.additions}&nbsp;
+                                    <p className={styles.expandedLabel}>insertions</p>
                                     (+)
                                 </div>
-                                <div className={`${styles.commitChangesItem} red`}>{totalChanges.deletions}
-                                    <p className={styles.expandedLabel}> deletions</p>
+                                <div className={`${styles.commitChangesItem} red`}>
+                                    <p>{totalChanges.deletions}</p>&nbsp;
+                                    <p className={styles.expandedLabel}>deletions</p>
                                     (-)
                                 </div>
                             </div>
